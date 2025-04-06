@@ -1,8 +1,8 @@
 <!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Professional Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Professional Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <style>
     * {
@@ -56,7 +56,16 @@ nav {
 
 .nav-links {
   display: flex;
-  gap: 1rem;
+  flex-direction: column;
+  width: 100%;
+  gap: 0.5rem;
+}
+
+@media(min-width: 768px) {
+  .nav-links {
+    flex-direction: row;
+    width: auto;
+  }
 }
 
 .nav-links a {
@@ -76,10 +85,11 @@ nav {
 .dark-toggle {
   cursor: pointer;
   color: #0ff;
+  margin-top: 1rem;
 }
 
 section {
-  padding: 2rem;
+  padding: 2rem 1rem;
   max-width: 1200px;
   margin: auto;
   opacity: 0;
@@ -134,20 +144,6 @@ h2 {
   color: #fff;
 }
 
-.portfolio-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1rem;
-}
-
-.portfolio-item {
-  background: #111;
-  padding: 1rem;
-  border-radius: 8px;
-  box-shadow: 0 0 10px #0ff;
-  color: #0ff;
-}
-
 footer {
   text-align: center;
   background: #000;
@@ -168,7 +164,6 @@ footer {
       <a href="#home">Home</a>
       <a href="#about">About</a>
       <a href="#services">Services</a>
-      <a href="#portfolio">Portfolio</a>
       <a href="#testimonials">Testimonials</a>
       <a href="#blog">Blog</a>
       <a href="#contact">Contact</a>
@@ -189,13 +184,6 @@ footer {
       <li>Branding & Identity</li>
       <li>SEO & Marketing</li>
     </ul>
-  </section>  <section id="portfolio">
-    <h2>Portfolio</h2>
-    <div class="portfolio-grid">
-      <div class="portfolio-item">Project 1</div>
-      <div class="portfolio-item">Project 2</div>
-      <div class="portfolio-item">Project 3</div>
-    </div>
   </section>  <section id="testimonials">
     <h2>Testimonials</h2>
     <p style="color:#0ff;">"Amazing work! Highly professional." - Client A</p>
