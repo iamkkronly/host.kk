@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Tapori 3D Swag Site</title>
@@ -13,191 +12,200 @@
       --dark-bg: #121212;
       --light-text: #000000;
       --dark-text: #ffffff;
-    }
+    }body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--light-bg);
+  color: var(--light-text);
+  transition: 0.4s ease;
+}
 
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background-color: var(--light-bg);
-      color: var(--light-text);
-      transition: 0.4s ease;
-    }
+.dark-mode {
+  background-color: var(--dark-bg);
+  color: var(--dark-text);
+}
 
-    .dark-mode {
-      background-color: var(--dark-bg);
-      color: var(--dark-text);
-    }
+header {
+  background: linear-gradient(45deg, var(--primary), var(--secondary));
+  color: white;
+  padding: 2rem 1rem;
+  text-align: center;
+}
 
-    header {
-      background: linear-gradient(45deg, var(--primary), var(--secondary));
-      color: white;
-      padding: 2rem 1rem;
-      text-align: center;
-    }
+nav {
+  background-color: #222;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1rem;
+  flex-wrap: wrap;
+}
 
-    nav {
-      background-color: #222;
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      padding: 1rem;
-      flex-wrap: wrap;
-    }
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
+nav a:hover {
+  color: var(--secondary);
+}
 
-    nav a:hover {
-      color: var(--secondary);
-    }
+section {
+  padding: 2rem;
+  animation: fadeIn 1s ease-in-out;
+}
 
-    section {
-      padding: 2rem;
-      animation: fadeIn 1s ease-in-out;
-    }
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(15px);}
+  to {opacity: 1; transform: translateY(0);}
+}
 
-    @keyframes fadeIn {
-      from {opacity: 0; transform: translateY(15px);}
-      to {opacity: 1; transform: translateY(0);}
-    }
+.form-box {
+  max-width: 400px;
+  margin: auto;
+  background: #f0f0f0;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
 
-    .form-box {
-      max-width: 400px;
-      margin: auto;
-      background: #f0f0f0;
-      padding: 1.5rem;
-      border-radius: 12px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    }
+.form-box input,
+.form-box textarea {
+  width: 100%;
+  margin: 0.5rem 0;
+  padding: 0.7rem;
+  border: none;
+  border-radius: 6px;
+}
 
-    .form-box input,
-    .form-box textarea {
-      width: 100%;
-      margin: 0.5rem 0;
-      padding: 0.7rem;
-      border: none;
-      border-radius: 6px;
-    }
+.form-box button {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 0.7rem 1.2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
 
-    .form-box button {
-      background: var(--primary);
-      color: white;
-      border: none;
-      padding: 0.7rem 1.2rem;
-      border-radius: 6px;
-      cursor: pointer;
-      font-weight: 600;
-    }
+.theme-btn {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  padding: 0.5rem 1rem;
+  background: #000;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
 
-    .theme-btn {
-      position: fixed;
-      top: 15px;
-      right: 15px;
-      padding: 0.5rem 1rem;
-      background: #000;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-    }
+.whatsapp-btn, .feedback-btn {
+  position: fixed;
+  bottom: 20px;
+  background: #25D366;
+  color: white;
+  border: none;
+  padding: 0.7rem 1rem;
+  border-radius: 50px;
+  font-weight: bold;
+  cursor: pointer;
+}
 
-    .whatsapp-btn, .feedback-btn {
-      position: fixed;
-      bottom: 20px;
-      background: #25D366;
-      color: white;
-      border: none;
-      padding: 0.7rem 1rem;
-      border-radius: 50px;
-      font-weight: bold;
-      cursor: pointer;
-    }
+.whatsapp-btn {
+  left: 20px;
+}
 
-    .whatsapp-btn {
-      left: 20px;
-    }
+.feedback-btn {
+  right: 20px;
+  background-color: #ff1493;
+}
 
-    .feedback-btn {
-      right: 20px;
-      background-color: #ff1493;
-    }
+.slider {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 1rem;
+  scroll-snap-type: x mandatory;
+}
 
-    .slider {
-      display: flex;
-      overflow-x: auto;
-      gap: 10px;
-      padding: 1rem 0;
-    }
+.model-box {
+  min-width: 240px;
+  max-width: 240px;
+  flex-shrink: 0;
+  scroll-snap-align: center;
+  background: #f3f3f3;
+  border-radius: 12px;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
 
-    model-viewer {
-      width: 200px;
-      height: 200px;
-      border-radius: 12px;
-      background-color: #eee;
-    }
+model-viewer {
+  width: 100%;
+  height: 200px;
+  background-color: #fff;
+  border-radius: 12px;
+}
 
-    .download-btn {
-      display: inline-block;
-      padding: 0.6rem 1rem;
-      background-color: #008cff;
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-      margin: 1rem 0;
-    }
+.download-btn {
+  display: inline-block;
+  padding: 0.6rem 1rem;
+  background-color: #008cff;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  margin: 1rem 0;
+}
 
-    footer {
-      background-color: #222;
-      color: white;
-      text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
-    }
+footer {
+  background-color: #222;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
   </style>
 </head>
 <body>
   <button class="theme-btn" onclick="toggleTheme()">🌙 Toggle</button>
   <button class="whatsapp-btn" onclick="window.open('https://wa.me/917439431956', '_blank')">Chat WhatsApp</button>
-  <button class="feedback-btn" onclick="alert('Bhai bata kya feedback dena hai?')">Feedback</button>
-
-  <header>
+  <button class="feedback-btn" onclick="alert('Bhai bata kya feedback dena hai?')">Feedback</button>  <header>
     <h1 id="typing-text"></h1>
     <p>Apna Swag, Apna 3D Game!</p>
-  </header>
-
-  <nav>
+  </header>  <nav>
     <a href="#home">Home</a>
     <a href="#slider">3D Gallery</a>
     <a href="#about">About</a>
     <a href="#contact">Contact</a>
     <a href="#roast">Samsung Roast</a>
-  </nav>
-
-  <section id="home">
+  </nav>  <section id="home">
     <h2>Welcome Bhaukali Bhai!</h2>
     <p>Website loaded with features. Neeche sab check kar le ek baar.</p>
     <p>Visitors: <span id="visitor-count">0</span></p>
-  </section>
-
-  <section id="slider">
-    <h2>3D Gallery</h2>
+  </section>  <section id="slider">
+    <h2 style="text-align: center;">3D Gallery</h2>
     <div class="slider">
-      <model-viewer src="car.glb" alt="3D Car" auto-rotate camera-controls shadow-intensity="1"></model-viewer>
-      <model-viewer src="robot.glb" alt="3D Robot" auto-rotate camera-controls shadow-intensity="1"></model-viewer>
-      <model-viewer src="watch.glb" alt="3D Watch" auto-rotate camera-controls shadow-intensity="1"></model-viewer>
+      <div class="model-box">
+        <model-viewer src="car.glb" alt="3D Car" auto-rotate camera-controls shadow-intensity="1"></model-viewer>
+        <p>3D Car</p>
+      </div>
+      <div class="model-box">
+        <model-viewer src="robot.glb" alt="3D Robot" auto-rotate camera-controls shadow-intensity="1"></model-viewer>
+        <p>3D Robot</p>
+      </div>
+      <div class="model-box">
+        <model-viewer src="watch.glb" alt="3D Watch" auto-rotate camera-controls shadow-intensity="1"></model-viewer>
+        <p>3D Watch</p>
+      </div>
     </div>
-  </section>
-
-  <section id="about">
+  </section>  <section id="about">
     <h2>About</h2>
     <p>Bhai hacker hoon, designer hoon, aur creative bhi. Ye website bana ke sabko dikhana hai ke kaun boss hai!</p>
     <a class="download-btn" href="https://example.com/yourfile.pdf" download>Download Brochure</a>
-  </section>
-
-  <section id="contact">
+  </section>  <section id="contact">
     <h2>Contact</h2>
     <div class="form-box">
       <form onsubmit="submitForm(event)">
@@ -207,18 +215,12 @@
         <button type="submit">Send Now</button>
       </form>
     </div>
-  </section>
-
-  <section id="roast">
+  </section>  <section id="roast">
     <h2>Samsung Roast Zone</h2>
     <p>Samsung ka UI aur bug system dekh ke lagta hai coding unke liye naye saal ka resolution hai. Hamara website toh swag se full loaded hai bhai!</p>
-  </section>
-
-  <footer>
+  </section>  <footer>
     <p>© 2025 Bhaukali Dev. Built with swag and love. Samsung = Worst Company Ever!</p>
-  </footer>
-
-  <script>
+  </footer>  <script>
     function toggleTheme() {
       document.body.classList.toggle("dark-mode");
     }
@@ -235,12 +237,9 @@
       }
     }
 
-    // Fake visitor counter
     let count = Math.floor(Math.random() * 1000 + 100);
     document.getElementById("visitor-count").innerText = count;
 
-    // Start typewriter effect
     typeWriterEffect("Tapori 3D Swag Website");
-  </script>
-</body>
+  </script></body>
 </html>
