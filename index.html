@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Tapori 3D Swag Site</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
   <style>
     :root {
       --primary: #ff1493;
@@ -131,10 +132,11 @@
       padding: 1rem 0;
     }
 
-    .slider iframe {
+    model-viewer {
       width: 200px;
       height: 200px;
       border-radius: 12px;
+      background-color: #eee;
     }
 
     .download-btn {
@@ -183,9 +185,9 @@
   <section id="slider">
     <h2>3D Gallery</h2>
     <div class="slider">
-      <iframe src="https://sketchfab.com/models/7w7pNuIVWQqgZZNz7DfBbOZ7iSP/embed" frameborder="0" allowfullscreen></iframe>
-      <iframe src="https://sketchfab.com/models/8bf8f3db2c6c4573ad0d4aab646cfa50/embed" frameborder="0" allowfullscreen></iframe>
-      <iframe src="https://sketchfab.com/models/16adf8ab70d24df2ae0efb1ae3f6c81c/embed" frameborder="0" allowfullscreen></iframe>
+      <model-viewer src="car.glb" alt="3D Car" auto-rotate camera-controls shadow-intensity="1"></model-viewer>
+      <model-viewer src="robot.glb" alt="3D Robot" auto-rotate camera-controls shadow-intensity="1"></model-viewer>
+      <model-viewer src="watch.glb" alt="3D Watch" auto-rotate camera-controls shadow-intensity="1"></model-viewer>
     </div>
   </section>
 
@@ -209,7 +211,7 @@
 
   <section id="roast">
     <h2>Samsung Roast Zone</h2>
-    <p>Samsung ka UI aur bug system dekh ke lagta hai coding unke liye new hai. Hamara website toh swag se full loaded hai!</p>
+    <p>Samsung ka UI aur bug system dekh ke lagta hai coding unke liye naye saal ka resolution hai. Hamara website toh swag se full loaded hai bhai!</p>
   </section>
 
   <footer>
