@@ -14,6 +14,27 @@
   background-color: #f9f9f9;
   color: #333;
   line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+.dark-mode {
+  background-color: #121212;
+  color: #eee;
+}
+
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #007bff;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  z-index: 9999;
 }
 
 header {
@@ -26,28 +47,45 @@ header {
 nav {
   background: #333;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   flex-wrap: wrap;
-  gap: 1rem;
   padding: 1rem;
 }
 
-nav a {
+.nav-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-links a {
   color: white;
   text-decoration: none;
   padding: 0.5rem 1rem;
   transition: background 0.3s;
 }
 
-nav a:hover {
+.nav-links a:hover {
   background: #007bff;
   border-radius: 4px;
+}
+
+.dark-toggle {
+  cursor: pointer;
+  color: #fff;
 }
 
 section {
   padding: 2rem;
   max-width: 1200px;
   margin: auto;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease-out;
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .form-container {
@@ -82,18 +120,17 @@ section {
   background-color: #0056b3;
 }
 
-.whatsapp-btn {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: #25D366;
-  color: white;
-  border: none;
-  padding: 0.75rem 1.25rem;
-  border-radius: 50px;
-  font-weight: bold;
-  text-decoration: none;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.portfolio-item {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 footer {
@@ -106,29 +143,50 @@ footer {
 
   </style>
 </head>
-<body>  <header>
+<body>
+  <div class="loading-screen" id="loading">Loading...</div>  <header>
     <h1>My Professional Portfolio</h1>
     <p>Creative. Passionate. Experienced.</p>
   </header>  <nav>
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#services">Services</a>
-    <a href="#contact">Contact</a>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#blog">Blog</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="dark-toggle" onclick="toggleDarkMode()">Toggle Dark Mode</div>
   </nav>  <section id="home">
     <h2>Welcome</h2>
-    <p>Hello and welcome to my professional portfolio website. I'm here to help you bring your ideas to life with modern, creative, and effective design and development solutions.</p>
+    <p>Hello and welcome to my professional portfolio website.</p>
+    <a href="resume.pdf" download>Download Resume</a>
   </section>  <section id="about">
     <h2>About Me</h2>
-    <p>I am a dedicated professional with years of experience in web development, graphic design, and client-focused digital solutions. I take pride in delivering high-quality work that exceeds expectations.</p>
+    <p>Years of experience in web development, graphic design, and digital solutions.</p>
   </section>  <section id="services">
     <h2>Services</h2>
     <ul>
       <li>Web Design & Development</li>
       <li>UI/UX Design</li>
       <li>Branding & Identity</li>
-      <li>Custom WordPress Solutions</li>
       <li>SEO & Marketing</li>
     </ul>
+  </section>  <section id="portfolio">
+    <h2>Portfolio</h2>
+    <div class="portfolio-grid">
+      <div class="portfolio-item">Project 1</div>
+      <div class="portfolio-item">Project 2</div>
+      <div class="portfolio-item">Project 3</div>
+    </div>
+  </section>  <section id="testimonials">
+    <h2>Testimonials</h2>
+    <p>"Amazing work! Highly professional." - Client A</p>
+    <p>"Delivered everything perfectly and on time." - Client B</p>
+  </section>  <section id="blog">
+    <h2>Blog</h2>
+    <p>Coming soon: insightful articles on design, tech, and productivity.</p>
   </section>  <section id="contact">
     <h2>Contact Me</h2>
     <div class="form-container">
@@ -139,11 +197,18 @@ footer {
         <button type="submit">Send Message</button>
       </form>
     </div>
-  </section><a class="whatsapp-btn" href="https://wa.me/917439431956" target="_blank">Chat on WhatsApp</a>
-
-  <footer>
+  </section>  <footer>
     <p>&copy; 2025 My Portfolio. All rights reserved.</p>
   </footer>  <script>
+    window.addEventListener('load', () => {
+      document.getElementById('loading').style.display = 'none';
+      document.querySelectorAll('section').forEach(sec => sec.classList.add('visible'));
+    });
+
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+    }
+
     function submitForm(e) {
       e.preventDefault();
       alert("Thanks for reaching out! I'll get back to you soon.");
