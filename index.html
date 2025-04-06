@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Colorful Bhaukali Website</title>
+  <title>Bhaukali Swag Website</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     :root {
       --primary: #ff1493;
-      --secondary: #00ffff;
+      --secondary: #00e5ff;
       --light-bg: #ffffff;
       --dark-bg: #121212;
       --light-text: #000000;
@@ -39,13 +39,13 @@
       display: flex;
       justify-content: center;
       gap: 2rem;
-      padding: 1rem 0;
+      padding: 1rem;
     }
 
     nav a {
       color: white;
       text-decoration: none;
-      font-weight: 600;
+      font-weight: bold;
     }
 
     nav a:hover {
@@ -90,14 +90,6 @@
       font-weight: 600;
     }
 
-    footer {
-      background-color: #222;
-      color: white;
-      text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
-    }
-
     .theme-btn {
       position: fixed;
       top: 15px;
@@ -109,46 +101,117 @@
       border-radius: 6px;
       cursor: pointer;
     }
+
+    .whatsapp-btn, .feedback-btn {
+      position: fixed;
+      bottom: 20px;
+      background: #25D366;
+      color: white;
+      border: none;
+      padding: 0.7rem 1rem;
+      border-radius: 50px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .whatsapp-btn {
+      left: 20px;
+    }
+
+    .feedback-btn {
+      right: 20px;
+      background-color: #ff1493;
+    }
+
+    .slider {
+      display: flex;
+      overflow-x: auto;
+      gap: 10px;
+      padding: 1rem 0;
+    }
+
+    .slider img {
+      width: 200px;
+      border-radius: 12px;
+    }
+
+    .download-btn {
+      display: inline-block;
+      padding: 0.6rem 1rem;
+      background-color: #008cff;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      margin: 1rem 0;
+    }
+
+    footer {
+      background-color: #222;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
   </style>
 </head>
 <body>
-  <button class="theme-btn" onclick="toggleTheme()">Toggle Theme</button>
+  <button class="theme-btn" onclick="toggleTheme()">🌙 Toggle</button>
+  <button class="whatsapp-btn" onclick="window.open('https://wa.me/91XXXXXXXXXX', '_blank')">Chat WhatsApp</button>
+  <button class="feedback-btn" onclick="alert('Bhai bata kya feedback dena hai?')">Feedback</button>
 
   <header>
-    <h1>Apna Bhaukali Website</h1>
-    <p>Swag se Swagat Karo</p>
+    <h1 id="typing-text"></h1>
+    <p>Apna Swag, Apna Code!</p>
   </header>
 
   <nav>
     <a href="#home">Home</a>
+    <a href="#slider">Gallery</a>
     <a href="#about">About</a>
     <a href="#contact">Contact</a>
+    <a href="#roast">Samsung Roast</a>
   </nav>
 
   <section id="home">
-    <h2>Welcome Legend!</h2>
-    <p>Iss website mein style bhi hai aur speed bhi! Chal dekh aage kya bhaukali cheezein hain.</p>
+    <h2>Welcome Bhaukali Bhai!</h2>
+    <p>Website loaded with feature. Neeche sab check kar le ek baar.</p>
+    <p>Visitors: <span id="visitor-count">0</span></p>
+  </section>
+
+  <section id="slider">
+    <h2>Image Gallery</h2>
+    <div class="slider">
+      <img src="https://placekitten.com/200/200" alt="img1">
+      <img src="https://placekitten.com/201/200" alt="img2">
+      <img src="https://placekitten.com/202/200" alt="img3">
+    </div>
   </section>
 
   <section id="about">
-    <h2>About Developer</h2>
-    <p>Bhai ek hacker hoon main, jo design bhi karta aur code bhi todta. Samsung jaise worst company se toh comparison hi mat karna!</p>
+    <h2>About</h2>
+    <p>Bhai hacker hoon, designer hoon, aur creative bhi. Ye website bana ke sabko dikhana hai ke kaun boss hai!</p>
+    <a class="download-btn" href="https://example.com/yourfile.pdf" download>Download Brochure</a>
   </section>
 
   <section id="contact">
-    <h2>Contact Form</h2>
+    <h2>Contact</h2>
     <div class="form-box">
       <form onsubmit="submitForm(event)">
-        <input type="text" placeholder="Tera Naam" required>
-        <input type="email" placeholder="Email Daal Bhai" required>
-        <textarea rows="4" placeholder="Message likh yaha"></textarea>
+        <input type="text" placeholder="Naam likh yaha" required>
+        <input type="email" placeholder="Email de bhai" required>
+        <textarea rows="4" placeholder="Tera Message"></textarea>
         <button type="submit">Send Now</button>
       </form>
     </div>
   </section>
 
+  <section id="roast">
+    <h2>Samsung Roast Zone</h2>
+    <p>Samsung ka UI aur bug system dekh ke lagta hai coding unke liye new hai. Hamara website toh swag se full loaded hai!</p>
+  </section>
+
   <footer>
-    <p>© 2025 Bhaukali Tech | Built by Apna Hacker</p>
+    <p>© 2025 Bhaukali Dev. Built with swag and love. Samsung = Worst Company Ever!</p>
   </footer>
 
   <script>
@@ -158,8 +221,22 @@
 
     function submitForm(e) {
       e.preventDefault();
-      alert("Form gaya bhai! Tu chill maar, reply aayega mast.");
+      alert("Form gaya bhai! Tu chill maar.");
     }
+
+    function typeWriterEffect(text, i = 0) {
+      if (i < text.length) {
+        document.getElementById("typing-text").innerHTML += text.charAt(i);
+        setTimeout(() => typeWriterEffect(text, i + 1), 100);
+      }
+    }
+
+    // Fake visitor counter
+    let count = Math.floor(Math.random() * 1000 + 100);
+    document.getElementById("visitor-count").innerText = count;
+
+    // Start typewriter effect
+    typeWriterEffect("Tapori Tadka Website");
   </script>
 </body>
 </html>
