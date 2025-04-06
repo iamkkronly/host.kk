@@ -18,6 +18,7 @@
   background-color: var(--light-bg);
   color: var(--light-text);
   transition: 0.4s ease;
+  cursor: url('https://cur.cursors-4u.net/cursors/cur-13/cur1136.cur'), auto;
 }
 
 .dark-mode {
@@ -89,16 +90,23 @@ section {
   font-weight: 600;
 }
 
-.theme-btn {
+.theme-btn, .music-btn {
   position: fixed;
   top: 15px;
-  right: 15px;
-  padding: 0.5rem 1rem;
   background: #000;
   color: white;
   border: none;
+  padding: 0.5rem 1rem;
   border-radius: 6px;
   cursor: pointer;
+}
+
+.theme-btn {
+  right: 15px;
+}
+
+.music-btn {
+  left: 15px;
 }
 
 .whatsapp-btn, .feedback-btn {
@@ -170,10 +178,12 @@ footer {
   </style>
 </head>
 <body>
-  <button class="theme-btn" onclick="toggleTheme()">🌙 Toggle</button>
-  <button class="whatsapp-btn" onclick="window.open('https://wa.me/917439431956', '_blank')">Chat WhatsApp</button>
-  <button class="feedback-btn" onclick="alert('Bhai bata kya feedback dena hai?')">Feedback</button>  <header>
-    <h1 id="typing-text"></h1>
+  <audio id="bgMusic" loop autoplay>
+    <source src="yourmusic.mp3" type="audio/mpeg">
+  </audio><button class="music-btn" onclick="toggleMusic()">🔊</button> <button class="theme-btn" onclick="toggleTheme()">🌙 Toggle</button> <button class="whatsapp-btn" onclick="window.open('https://wa.me/917439431956', '_blank')">Chat WhatsApp</button> <button class="feedback-btn" onclick="alert('Bhai bata kya feedback dena hai?')">Feedback</button>
+
+  <header>
+    <h1><span id="multi-typing"></span></h1>
     <p>Apna Swag, Apna 3D Game!</p>
   </header>  <nav>
     <a href="#home">Home</a>
@@ -225,21 +235,37 @@ footer {
       document.body.classList.toggle("dark-mode");
     }
 
+    function toggleMusic() {
+      const music = document.getElementById('bgMusic');
+      music.muted = !music.muted;
+    }
+
     function submitForm(e) {
       e.preventDefault();
       alert("Form gaya bhai! Tu chill maar.");
     }
 
-    function typeWriterEffect(text, i = 0) {
-      if (i < text.length) {
-        document.getElementById("typing-text").innerHTML += text.charAt(i);
-        setTimeout(() => typeWriterEffect(text, i + 1), 100);
+    const words = ["3D Designer", "Hacker Bhai", "Artist"];
+    let wordIndex = 0;
+    let charIndex = 0;
+
+    function typeMultiple() {
+      if (charIndex < words[wordIndex].length) {
+        document.getElementById("multi-typing").innerHTML += words[wordIndex].charAt(charIndex++);
+        setTimeout(typeMultiple, 150);
+      } else {
+        setTimeout(() => {
+          document.getElementById("multi-typing").innerHTML = "";
+          charIndex = 0;
+          wordIndex = (wordIndex + 1) % words.length;
+          typeMultiple();
+        }, 1500);
       }
     }
 
     let count = Math.floor(Math.random() * 1000 + 100);
     document.getElementById("visitor-count").innerText = count;
 
-    typeWriterEffect("Tapori 3D Swag Website");
+    typeMultiple();
   </script></body>
 </html>
