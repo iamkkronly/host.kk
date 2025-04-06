@@ -11,15 +11,15 @@
       box-sizing: border-box;
     }body {
   font-family: 'Poppins', sans-serif;
-  background-color: #f9f9f9;
-  color: #333;
+  background-color: #0d0d0d;
+  color: #eee;
   line-height: 1.6;
   scroll-behavior: smooth;
 }
 
 .dark-mode {
-  background-color: #121212;
-  color: #eee;
+  background-color: #000;
+  color: #0ff;
 }
 
 .loading-screen {
@@ -28,7 +28,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: #007bff;
+  background: #00f;
   color: white;
   display: flex;
   align-items: center;
@@ -38,18 +38,20 @@
 }
 
 header {
-  background: #007bff;
+  background: linear-gradient(90deg, #00f, #0ff);
   color: white;
   padding: 2rem 1rem;
   text-align: center;
+  text-shadow: 0 0 5px #0ff, 0 0 10px #00f;
 }
 
 nav {
-  background: #333;
+  background: #000;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   padding: 1rem;
+  box-shadow: 0 0 15px #0ff;
 }
 
 .nav-links {
@@ -58,20 +60,22 @@ nav {
 }
 
 .nav-links a {
-  color: white;
+  color: #0ff;
   text-decoration: none;
   padding: 0.5rem 1rem;
-  transition: background 0.3s;
+  border: 1px solid #0ff;
+  border-radius: 4px;
+  transition: background 0.3s, color 0.3s;
 }
 
 .nav-links a:hover {
-  background: #007bff;
-  border-radius: 4px;
+  background: #0ff;
+  color: #000;
 }
 
 .dark-toggle {
   cursor: pointer;
-  color: #fff;
+  color: #0ff;
 }
 
 section {
@@ -81,6 +85,7 @@ section {
   opacity: 0;
   transform: translateY(20px);
   transition: all 0.6s ease-out;
+  border-bottom: 2px solid #0ff;
 }
 
 section.visible {
@@ -88,11 +93,16 @@ section.visible {
   transform: translateY(0);
 }
 
+h2 {
+  color: #0ff;
+  text-shadow: 0 0 10px #00f;
+}
+
 .form-container {
-  background: #fff;
+  background: #111;
   padding: 2rem;
   border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 0 10px #0ff;
   max-width: 500px;
   margin: auto;
 }
@@ -102,22 +112,26 @@ section.visible {
   width: 100%;
   padding: 0.75rem;
   margin-bottom: 1rem;
-  border: 1px solid #ccc;
+  border: 1px solid #0ff;
   border-radius: 4px;
+  background: #000;
+  color: #0ff;
 }
 
 .form-container button {
-  background-color: #007bff;
-  color: white;
+  background-color: #0ff;
+  color: #000;
   padding: 0.75rem 1.5rem;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   font-size: 1rem;
+  box-shadow: 0 0 10px #0ff;
 }
 
 .form-container button:hover {
-  background-color: #0056b3;
+  background-color: #00f;
+  color: #fff;
 }
 
 .portfolio-grid {
@@ -127,18 +141,20 @@ section.visible {
 }
 
 .portfolio-item {
-  background: #fff;
+  background: #111;
   padding: 1rem;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 0 10px #0ff;
+  color: #0ff;
 }
 
 footer {
   text-align: center;
-  background: #333;
-  color: white;
+  background: #000;
+  color: #0ff;
   padding: 1.5rem 1rem;
   margin-top: 2rem;
+  box-shadow: 0 0 10px #0ff;
 }
 
   </style>
@@ -161,13 +177,13 @@ footer {
   </nav>  <section id="home">
     <h2>Welcome</h2>
     <p>Hello and welcome to my professional portfolio website.</p>
-    <a href="resume.pdf" download>Download Resume</a>
+    <a href="resume.pdf" download style="color:#0ff;">Download Resume</a>
   </section>  <section id="about">
     <h2>About Me</h2>
     <p>Years of experience in web development, graphic design, and digital solutions.</p>
   </section>  <section id="services">
     <h2>Services</h2>
-    <ul>
+    <ul style="color:#0ff;">
       <li>Web Design & Development</li>
       <li>UI/UX Design</li>
       <li>Branding & Identity</li>
@@ -182,11 +198,11 @@ footer {
     </div>
   </section>  <section id="testimonials">
     <h2>Testimonials</h2>
-    <p>"Amazing work! Highly professional." - Client A</p>
-    <p>"Delivered everything perfectly and on time." - Client B</p>
+    <p style="color:#0ff;">"Amazing work! Highly professional." - Client A</p>
+    <p style="color:#0ff;">"Delivered everything perfectly and on time." - Client B</p>
   </section>  <section id="blog">
     <h2>Blog</h2>
-    <p>Coming soon: insightful articles on design, tech, and productivity.</p>
+    <p style="color:#0ff;">Coming soon: insightful articles on design, tech, and productivity.</p>
   </section>  <section id="contact">
     <h2>Contact Me</h2>
     <div class="form-container">
