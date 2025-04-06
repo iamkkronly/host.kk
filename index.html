@@ -2,45 +2,50 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Funky Colorful Website</title>
+  <title>Colorful Bhaukali Website</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     :root {
-      --primary: #ff007f;
-      --secondary: #00e5ff;
-      --bg-light: #fff;
-      --bg-dark: #1e1e1e;
-      --text-light: #000;
-      --text-dark: #fff;
+      --primary: #ff1493;
+      --secondary: #00ffff;
+      --light-bg: #ffffff;
+      --dark-bg: #121212;
+      --light-text: #000000;
+      --dark-text: #ffffff;
     }
 
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: var(--bg-light);
-      color: var(--text-light);
-      transition: all 0.3s ease;
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--light-bg);
+      color: var(--light-text);
+      transition: 0.4s ease;
+    }
+
+    .dark-mode {
+      background-color: var(--dark-bg);
+      color: var(--dark-text);
     }
 
     header {
-      background: linear-gradient(to right, var(--primary), var(--secondary));
-      padding: 1rem;
+      background: linear-gradient(45deg, var(--primary), var(--secondary));
       color: white;
+      padding: 2rem 1rem;
       text-align: center;
     }
 
     nav {
+      background-color: #222;
       display: flex;
       justify-content: center;
       gap: 2rem;
-      background-color: #222;
-      padding: 1rem;
+      padding: 1rem 0;
     }
 
     nav a {
       color: white;
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 600;
     }
 
     nav a:hover {
@@ -53,72 +58,67 @@
     }
 
     @keyframes fadeIn {
-      from {opacity: 0; transform: translateY(20px);}
+      from {opacity: 0; transform: translateY(15px);}
       to {opacity: 1; transform: translateY(0);}
     }
 
-    .form-container {
+    .form-box {
       max-width: 400px;
       margin: auto;
-      background: #f9f9f9;
-      padding: 1rem;
-      border-radius: 10px;
-      box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+      background: #f0f0f0;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
     }
 
-    .form-container input,
-    .form-container textarea {
+    .form-box input,
+    .form-box textarea {
       width: 100%;
       margin: 0.5rem 0;
-      padding: 0.5rem;
+      padding: 0.7rem;
       border: none;
-      border-radius: 5px;
+      border-radius: 6px;
     }
 
-    .form-container button {
-      background-color: var(--primary);
+    .form-box button {
+      background: var(--primary);
       color: white;
       border: none;
-      padding: 0.5rem 1rem;
-      border-radius: 5px;
+      padding: 0.7rem 1.2rem;
+      border-radius: 6px;
       cursor: pointer;
+      font-weight: 600;
     }
 
     footer {
-      text-align: center;
       background-color: #222;
       color: white;
+      text-align: center;
       padding: 1rem;
+      margin-top: 2rem;
     }
 
-    .dark {
-      background-color: var(--bg-dark);
-      color: var(--text-dark);
-    }
-
-    .dark .form-container {
-      background-color: #333;
-    }
-
-    .theme-toggle {
+    .theme-btn {
       position: fixed;
-      top: 10px;
-      right: 10px;
+      top: 15px;
+      right: 15px;
+      padding: 0.5rem 1rem;
       background: #000;
-      color: #fff;
+      color: white;
       border: none;
-      padding: 0.5rem;
+      border-radius: 6px;
       cursor: pointer;
-      border-radius: 5px;
     }
   </style>
 </head>
 <body>
-  <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
+  <button class="theme-btn" onclick="toggleTheme()">Toggle Theme</button>
+
   <header>
-    <h1>Tapori Tadka Website</h1>
-    <p>Apna Style, Apna Swag</p>
+    <h1>Apna Bhaukali Website</h1>
+    <p>Swag se Swagat Karo</p>
   </header>
+
   <nav>
     <a href="#home">Home</a>
     <a href="#about">About</a>
@@ -126,39 +126,39 @@
   </nav>
 
   <section id="home">
-    <h2>Welcome Bhaukali Banda!</h2>
-    <p>Ye website teri personality ki tarah full color, full swad mein hai!</p>
+    <h2>Welcome Legend!</h2>
+    <p>Iss website mein style bhi hai aur speed bhi! Chal dekh aage kya bhaukali cheezein hain.</p>
   </section>
 
   <section id="about">
-    <h2>About Me</h2>
-    <p>Naam yaad rakhna - Fukra Dev! Web banata hoon swag ke saath.</p>
+    <h2>About Developer</h2>
+    <p>Bhai ek hacker hoon main, jo design bhi karta aur code bhi todta. Samsung jaise worst company se toh comparison hi mat karna!</p>
   </section>
 
   <section id="contact">
-    <h2>Contact Me</h2>
-    <div class="form-container">
+    <h2>Contact Form</h2>
+    <div class="form-box">
       <form onsubmit="submitForm(event)">
         <input type="text" placeholder="Tera Naam" required>
-        <input type="email" placeholder="Email Bhai" required>
-        <textarea rows="4" placeholder="Bhaavnaayein yaha likh"></textarea>
-        <button type="submit">Send</button>
+        <input type="email" placeholder="Email Daal Bhai" required>
+        <textarea rows="4" placeholder="Message likh yaha"></textarea>
+        <button type="submit">Send Now</button>
       </form>
     </div>
   </section>
 
   <footer>
-    <p>© 2025 Fukra Tech | Banaya gaya ek Bhaukali Hacker ke dwara</p>
+    <p>© 2025 Bhaukali Tech | Built by Apna Hacker</p>
   </footer>
 
   <script>
     function toggleTheme() {
-      document.body.classList.toggle('dark');
+      document.body.classList.toggle("dark-mode");
     }
 
     function submitForm(e) {
       e.preventDefault();
-      alert("Bhai tera form submit ho gaya! Ab ruk jaw jawab aayega.");
+      alert("Form gaya bhai! Tu chill maar, reply aayega mast.");
     }
   </script>
 </body>
