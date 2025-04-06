@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colorful Paradise</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        header {
+            background: linear-gradient(90deg, #ff9a9e 0%, #fad0c4 100%);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            font-size: 3rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            margin-bottom: 1rem;
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+        
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .card-header {
+            height: 150px;
+            background: linear-gradient(90deg, #a1c4fd 0%, #c2e9fb 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .card:nth-child(2) .card-header {
+            background: linear-gradient(90deg, #ffecd2 0%, #fcb69f 100%);
+        }
+        
+        .card:nth-child(3) .card-header {
+            background: linear-gradient(90deg, #84fab0 0%, #8fd3f4 100%);
+        }
+        
+        .card:nth-child(4) .card-header {
+            background: linear-gradient(90deg, #a6c1ee 0%, #fbc2eb 100%);
+        }
+        
+        .card-body {
+            padding: 1.5rem;
+        }
+        
+        .card-body p {
+            color: #666;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.6rem 1.2rem;
+            background: linear-gradient(90deg, #ff9a9e 0%, #fad0c4 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 154, 158, 0.4);
+        }
+        
+        footer {
+            background: linear-gradient(90deg, #4776E6 0%, #8E54E9 100%);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 1rem 0;
+        }
+        
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            background: rgba(255,255,255,0.3);
+        }
+        
+        .wave {
+            position: relative;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+        }
+        
+        .wave svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 100px;
+        }
+        
+        .wave .shape-fill {
+            fill: #FFFFFF;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Colorful Paradise</h1>
+        <p class="tagline">Where vibrant colors meet beautiful design</p>
+    </header>
+    
+    <div class="wave">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+        </svg>
+    </div>
+    
+    <div class="container">
+        <h2 style="text-align: center; color: #555; margin-bottom: 1rem;">Explore Our Features</h2>
+        <p style="text-align: center; color: #777; max-width: 700px; margin: 0 auto;">Discover a world of vibrant colors and beautiful gradients that will make your website stand out from the crowd.</p>
+        
+        <div class="card-grid">
+            <div class="card">
+                <div class="card-header">
+                    Gradient Magic
+                </div>
+                <div class="card-body">
+                    <p>Our gradient generator creates stunning color transitions that will make your design pop. Choose from our curated palette or create your own.</p>
+                    <a href="#" class="btn">Try It Now</a>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    Color Schemes
+                </div>
+                <div class="card-body">
+                    <p>Browse through hundreds of beautiful color schemes designed by professionals. Perfect for any project or mood.</p>
+                    <a href="#" class="btn">Explore Schemes</a>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    Palette Generator
+                </div>
+                <div class="card-body">
+                    <p>Upload an image and we'll extract the perfect color palette for you. Great for branding and design inspiration.</p>
+                    <a href="#" class="btn">Generate Palette</a>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    CSS Effects
+                </div>
+                <div class="card-body">
+                    <p>Learn how to implement stunning CSS effects with our easy-to-follow tutorials and code examples.</p>
+                    <a href="#" class="btn">Learn CSS</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="social-icons">
+            <a href="#" class="social-icon">📱</a>
+            <a href="#" class="social-icon">💻</a>
+            <a href="#" class="social-icon">📸</a>
+            <a href="#" class="social-icon">🐦</a>
+            <a href="#" class="social-icon">🔔</a>
+        </div>
+        <p>© 2023 Colorful Paradise. All rights reserved.</p>
+        <p style="opacity: 0.8; font-size: 0.9rem; margin-top: 0.5rem;">Made with ❤️ and vibrant colors</p>
+    </footer>
+</body>
+  </html>
