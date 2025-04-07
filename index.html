@@ -144,6 +144,18 @@ h2 {
   color: #fff;
 }
 
+.secret-button {
+  position: fixed;
+  bottom: 5px;
+  right: 5px;
+  background: transparent;
+  border: none;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  z-index: 10000;
+}
+
 footer {
   text-align: center;
   background: #000;
@@ -203,7 +215,9 @@ footer {
     </div>
   </section>  <footer>
     <p>&copy; 2025 My Portfolio. All rights reserved.</p>
-  </footer>  <script>
+  </footer><button class="secret-button" onclick="window.location.href='https://google.com'"></button>
+
+  <script>
     window.addEventListener('load', () => {
       document.getElementById('loading').style.display = 'none';
       document.querySelectorAll('section').forEach(sec => sec.classList.add('visible'));
